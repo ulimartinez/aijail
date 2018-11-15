@@ -5,7 +5,7 @@
     <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
     <div class="split style1">
       <section>
-        <form method="post" action="#">
+        <form method="post" action="../admin.html">
           <div class="field half first">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
@@ -42,7 +42,7 @@
           <li>
             <h3>Social</h3>
             <ul class="icons">
-              <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="/home/ulimartinez/WebstormProjects/aijail/admin.html" class="fa-twitter" onclick="twClick()"><span class="label">Twitter</span></a></li>
               <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
               <li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
               <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
@@ -55,3 +55,9 @@
   </div>
 </section>
 </template>
+<script>
+  function twClick(e){
+      e.preventDefault();
+      require('remote').getCurrentWindow().loadURL(`file://${__dirname}/cualquier.html`);
+  }
+</script>

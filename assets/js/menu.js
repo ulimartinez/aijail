@@ -9,10 +9,10 @@ function(n) {
       },
 
       importSectionsToDOM: function() {
-        const links = document.querySelectorAll('link[rel="import"]')
+        const links = document.querySelectorAll('link[rel="import"]');
         Array.prototype.forEach.call(links, function (link) {
-          let template = link.import.querySelector(navigation.menu.constants.sectionTemplate)
-          let clone = document.importNode(template.content, true)
+          let template = link.import.querySelector(navigation.menu.constants.sectionTemplate);
+          let clone = document.importNode(template.content, true);
           document.querySelector(navigation.menu.constants.contentContainer).appendChild(clone)
         })
       },
@@ -20,21 +20,21 @@ function(n) {
       setMenuOnClickEvent: function () {
         document.body.addEventListener('click', function (event) {
           if (event.target.dataset.section) {
-            navigation.menu.hideAllSections()
+            navigation.menu.hideAllSections();
             navigation.menu.showSection(event)
           }
         })
       },
 
       showSection: function(event) {
-        const sectionId = event.target.dataset.section
-        $('#' + sectionId).show()
+        const sectionId = event.target.dataset.section;
+        $('#' + sectionId).show();
         $('#' + sectionId + ' section').show()
       },
 
       showStartSection: function() {
-        $(this.constants.startSectionMenuItem).click()
-        $(this.constants.startSection).show()
+        $(this.constants.startSectionMenuItem).click();
+        $(this.constants.startSection).show();
         $(this.constants.startSection + ' section').show()
       },
 
@@ -43,8 +43,8 @@ function(n) {
       },
 
       init: function() {
-        this.importSectionsToDOM()
-        this.setMenuOnClickEvent()
+        this.importSectionsToDOM();
+        this.setMenuOnClickEvent();
         this.showStartSection()
       }
     };

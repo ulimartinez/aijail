@@ -10,10 +10,49 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="import" href="sections/getintouch.html">
+		<link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-reboot.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="import" data-toggle="collapse" href="sections/getintouch.html">
     <link rel="import" href="sections/welcome.html">
     <link rel="import" href="sections/dialog.html">
-    <link rel="import" href="sections/ipcremote.html">
+    <link rel="import" href="sections/map.html">
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+			#mapdiv {
+				height: 100%;
+			}
+			/* Optional: Makes the sample page fill the window. */
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#floating-panel {
+				position: absolute;
+				top: 10px;
+				left: 25%;
+				z-index: 5;
+				background-color: #fff;
+				padding: 5px;
+				border: 1px solid #999;
+				text-align: center;
+				font-family: 'Roboto','sans-serif';
+				line-height: 30px;
+				padding-left: 10px;
+			}
+			#floating-panel {
+				background-color: #fff;
+				border: 1px solid #999;
+				left: 25%;
+				padding: 5px;
+				position: absolute;
+				top: 10px;
+				z-index: 5;
+			}
+		</style>
+
 	</head>
 	<body>
 
@@ -22,8 +61,11 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a id="welcome-menu" data-section="welcome" href="#">Welcome</a></li>
-							<li><a id="whoweare-menu" data-section="ipcremote" href="#">IPC/Remote</a></li>
+							<li><a id="welcome-menus" data-section="welcome" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >Admin</a>
+							</li>
+							<div class="collapse" id="collapseExample">
+								<ul><li><a id="whoweare-menu" data-section="map" href="#">IPC/Remote</a></li></ul>
+							</div>
 							<li><a id="dialog-menu" data-section="dialog" href="#">Dialog</a></li>
 							<li><a id="getintouch-menu" data-section="getintouch" href="#">Get in touch</a></li>
 						</ul>
@@ -52,11 +94,13 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/bootstrap.bundle.js"></script>
+		<script src="assets/js/bootstrap.js"></script>
       <script>
-        require('./assets/js/menu')
-				require('./assets/js/translations')
-				require('./assets/js/ipc')
-				require('./assets/js/dialog')
+        require('./assets/js/menu');
+		require('./assets/js/translations');
+		require('./assets/js/ipc');
+		require('./assets/js/dialog');
       </script>
 	</body>
 </html>
