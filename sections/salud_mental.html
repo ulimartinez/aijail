@@ -3,15 +3,25 @@
   <div class="inner">
 
     <h1>Salud Mental</h1>
-    <form method="POST">
+    <form method="POST" id="salud">
       <div class="field">
         <label for="message">Como te sientes con tus acciones recientes?</label>
         <textarea name="message" id="message" rows="5"></textarea>
       </div>
       <ul class="actions">
-        <li><a href="" class="button submit">Enviar</a></li>
+        <li><a id="enviarSalud" href="" class="button submit">Enviar</a></li>
       </ul>
     </form>
   </div>
+  <script>
+    $('#enviarSalud').on('click', (e)=>{
+        e.preventDefault();
+        let text = $('textarea').val();
+        $.post('https://us-central1-ires-1528920496317.cloudfunctions.net/analyzeEntitySentiment/', {"review_text": text}).success((data) => console.log(data));
+    });
+    $('#salud').on('submit', (e)=>{
+        console.log(e.data);
+    })
+  </script>
 </section>
 </template>
