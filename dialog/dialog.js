@@ -19,7 +19,7 @@ ipcMain.on('show-open-dialog', (event, arg)=> {
 })
 
 ipcMain.on('show-error-box', (event, arg) => {
-  dialog.showErrorBox('Oops! Something went wrong!', 'Help us improve your experience by sending an error report')
+  dialog.showErrorBox('No Disponible Aun', 'Por favor completa las lecciones antes de empezar la evaluacion')
 });
 
 ipcMain.on('show-message-box', (event, arg) => {
