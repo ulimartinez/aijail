@@ -61,13 +61,27 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a id="welcome-menus" data-section="welcome" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >Admin</a>
+							<li>
+								<a id="admin-menus" data-toggle="collapse" href="#collapseAdmin" aria-expanded="false" aria-controls="collapseExample" >Admin</a>
 							</li>
-							<div class="collapse" id="collapseExample">
-								<ul><li><a id="whoweare-menu" data-section="map" href="#">IPC/Remote</a></li></ul>
+							<div class="collapse" id="collapseAdmin">
+								<ul>
+									<li><a id="map-menu" data-section="map" href="#">Mapa</a></li>
+									<li><a id="report-menu" data-section="map" href="#">Reportes</a></li>
+								</ul>
+
 							</div>
-							<li><a id="dialog-menu" data-section="dialog" href="#">Dialog</a></li>
-							<li><a id="getintouch-menu" data-section="getintouch" href="#">Get in touch</a></li>
+							<li>
+								<a id="user-menus" data-toggle="collapse" href="#collapseUser" aria-expanded="false" aria-controls="collapseExample" >Usuario</a>
+							</li>
+							<div class="collapse" id="collapseUser">
+								<ul>
+									<li><a id="legal-menu" data-section="map" href="#">Cultura Legalidad</a></li>
+									<li><a id="mind-menu" data-section="map" href="#">Salud Mental</a></li>
+									<li><a id="work-menu" data-section="map" href="#">Empleabilidad</a></li>
+								</ul>
+
+							</div>
 						</ul>
 					</nav>
 				</div>
@@ -96,11 +110,15 @@
 			<script src="assets/js/main.js"></script>
 		<script src="assets/js/bootstrap.bundle.js"></script>
 		<script src="assets/js/bootstrap.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7srCmYxsLi0G7mvhlpfjRNcaRCNBVsDY&libraries=visualization&callback=initMap">
+        </script>
       <script>
         require('./assets/js/menu');
 		require('./assets/js/translations');
 		require('./assets/js/ipc');
 		require('./assets/js/dialog');
+		require('./assets/js/map');
       </script>
 	</body>
 </html>
