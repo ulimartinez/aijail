@@ -3,25 +3,29 @@
         <div class="inner" style="height: 1000px">
             <h2>Reporte analysis</h2>
             <div id="resultadoTexto" class="field">
-                <p>Pienso que lo que hize estuvo <mark>mal</mark> y me siento <mark>arrepentido</mark></p>
+                <p id="myParagraph">Pienso que lo que hize estuvo mal y me siento arrepentido</p>
             </div>
         </div>
+        <button onclick="analyze()">Click me</button> 
+        <a id="enviarSalud" href="" class="button submit">Enviar</a>
     </section>
 </template>
 
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-
 <script>
+     function analyze(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(this.responseText);
+            }
+        };
+        let text = document.getElementById("myParagraph").innerHTML;
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-             alert(this.responseText);
-         }
-    };
-    console.log('que pedo');
-    xhttp.open("POST", "https://us-central1-ires-1528920496317.cloudfunctions.net/analyzeEntitySetiment", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send('{"review_text":"How are you? Im bad suicide"}');
+        xhttp.open("POST", "https://us-central1-ires-1528920496317.cloudfunctions.net/analyzeEntitySetiment", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        console.log('{"review_text":"'+text+'"}')
+        xhttp.send('{"review_text":"'+text+'"}');
+    }
 
+   
 </script>
