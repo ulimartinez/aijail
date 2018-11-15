@@ -18,15 +18,12 @@
 		<link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap-reboot.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <link rel="import" data-toggle="collapse" href="sections/getintouch.html">
-    <link rel="import" href="sections/welcome.html">
-    <link rel="import" href="sections/dialog.html">
     <link rel="import" href="sections/map.html">
 		<style>
 			/* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
 			#mapdiv {
-				height: 100%;
+				height: 800px;
 			}
 			/* Optional: Makes the sample page fill the window. */
 			html, body {
@@ -56,6 +53,9 @@
 				top: 10px;
 				z-index: 5;
 			}
+            #wrapper {
+                height: 800px;
+            }
 		</style>
 
 	</head>
@@ -81,14 +81,14 @@
 							</li>
 							<div class="collapse" id="collapseUser">
 								<ul>
-									<li><a id="legal-menu" data-section="map" href="#">Cultura Legalidad</a></li>
-									<li><a id="mind-menu" data-section="map" href="#">Salud Mental</a></li>
-									<li><a id="work-menu" data-section="map" href="#">Empleabilidad</a></li>
+                                    <li><a id="perfil-menu" data-section="perfil" href="#">Perfil</a></li>
+                                    <li><a id="legal-menu" data-section="cdll" href="#">Cultura Legalidad</a></li>
+									<li><a id="mind-menu" data-section="salud_mental" href="#">Salud Mental</a></li>
+									<li><a id="work-menu" data-section="empleabilidad" href="#">Empleabilidad</a></li>
+                                    <li><a id="rights-menu" data-section="derechos_humanos" href="#">Derechos Humanos</a></li>
 								</ul>
 
 							</div>
-							<li><a id="dialog-menu" data-section="dialog" href="#">Dialog</a></li>
-							<li><a id="getintouch-menu" data-section="getintouch" href="#">Get in touch</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -117,9 +117,9 @@
 			<script src="assets/js/main.js"></script>
 		<script src="assets/js/bootstrap.bundle.js"></script>
 		<script src="assets/js/bootstrap.js"></script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7srCmYxsLi0G7mvhlpfjRNcaRCNBVsDY&libraries=visualization&callback=initMap">
-        </script>
+        <!--<script async defer-->
+                <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7srCmYxsLi0G7mvhlpfjRNcaRCNBVsDY&libraries=visualization&callback=initMap">-->
+        <!--</script>-->
       <script>
         require('./assets/js/menu');
 		require('./assets/js/translations');

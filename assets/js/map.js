@@ -14,7 +14,6 @@ function initMap() {
         map: map
     });
 }
-initMap();
 
 function toggleHeatmap() {
     heatmap.setMap(heatmap.getMap() ? null : map);
