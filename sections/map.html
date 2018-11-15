@@ -1,6 +1,7 @@
 <template class="section-template">
-    <section id="map" class="wrapper style1">
+    <section id="map" class="wrapper style3">
         <div class="inner">
+            <h2>Zonas de alto Riesgo</h2>
             <div id="mapdiv"></div>
         </div>
         <script>
@@ -8,14 +9,14 @@
 
             function initMap() {
                 map = new google.maps.Map(document.getElementById('mapdiv'), {
-                    zoom: 13,
-                    center: {lat: 31.739017, lng: -106.483831},
-                    mapTypeId: 'map'
+                    zoom: 12,
+                    center: {lat: 31.739017, lng: -106.483831}
                 });
 
                 heatmap = new google.maps.visualization.HeatmapLayer({
                     data: getPoints(),
-                    map: map
+                    map: map,
+                    radius: 20
                 });
             }
 
