@@ -18,13 +18,19 @@
                     map: map,
                     radius: 20
                 });
+                heatmap2 = new google.maps.visualization.HeatmapLayer({
+                    data: getPoints2(),
+                    map: map,
+                    radius: 20,
+                    gradient: getGradient()
+                });
             }
 
             function toggleHeatmap() {
                 heatmap.setMap(heatmap.getMap() ? null : map);
             }
 
-            function changeGradient() {
+            function getGradient() {
                 var gradient = [
                     'rgba(0, 255, 255, 0)',
                     'rgba(0, 255, 255, 1)',
@@ -41,7 +47,7 @@
                     'rgba(191, 0, 31, 1)',
                     'rgba(255, 0, 0, 1)'
                 ];
-                heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+                return gradient;
             }
 
             function changeRadius() {
@@ -53,6 +59,12 @@
             }
 
             // Heatmap data: 500 Points
+            function getPoints2() {
+                return [
+                    new google.maps.LatLng(31.673121, -106.427020),
+                    new google.maps.LatLng(31.672551, -106.427792),
+                ];
+            }
             function getPoints() {
                 return [
                     new google.maps.LatLng(31.739017, -106.483831),
@@ -79,8 +91,7 @@
                     new google.maps.LatLng(31.648111, -106.380292),
                     new google.maps.LatLng(31.647673, -106.378940),
                     new google.maps.LatLng(31.647161, -106.377927),
-                    new google.maps.LatLng(31.673121, -106.427020),
-                    new google.maps.LatLng(31.672551, -106.427792),
+
                 ];
             }
 

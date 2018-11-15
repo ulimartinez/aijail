@@ -6,10 +6,36 @@
                 <p id="myParagraph">Pienso que lo que hize estuvo mal y me siento arrepentido</p>
             </div>
             <button onclick="analyze()">Evaluar</button>
-            <br />
-            <h3>Resultados</h3>
-            <div id="result" class="progress" hidden>
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 23%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            <br /><br />
+            <div id="result" hidden>
+                <h3>Resultados</h3><br />
+                <h4>Sentimiento: </h4>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 23%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">positivo</div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 77%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">negativo</div>
+                </div>
+                <h4>Palabras clave: </h4>
+                <ul>
+                    <li><p><mark>hice</mark></p></li>
+                    <li>
+                        <ul>
+                            <li><p>accion</p></li>
+                        </ul>
+                    </li>
+                    <li><p><mark>mal</mark></p></li>
+                    <li>
+                        <ul>
+                            <li><p>calificativo</p></li>
+                            <li><p>negativo</p></li>
+                        </ul>
+                    </li>
+                    <li><p><mark>arrepentido</mark></p></li>
+                    <li>
+                        <ul>
+                            <li><p>sentimiento</p></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
