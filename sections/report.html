@@ -5,26 +5,33 @@
             <div id="resultadoTexto" class="field">
                 <p id="myParagraph">Pienso que lo que hize estuvo mal y me siento arrepentido</p>
             </div>
-            <button onclick="analyze()">Click me</button> 
+            <button onclick="analyze()">Evaluar</button>
+            <br />
+            <h3>Resultados</h3>
+            <div id="result" class="progress" hidden>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 23%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
      function analyze(){
+         let results="Pienso que lo que <mark>hice</mark> estuvo <mark>mal</mark> y me siento <mark>arrepentido</mark>";
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
+                //alert(this.responseText);
+                $('#result').attr('hidden', null);
+                $('#myParagraph').html(results);
             }
         };
         let text = document.getElementById("myParagraph").innerHTML;
 
         xhttp.open("POST", "https://us-central1-ires-1528920496317.cloudfunctions.net/analyzeEntitySetiment", true);
         xhttp.setRequestHeader("Content-type", "application/json");
-        console.log('{"review_text":"'+text+'"}')
-        xhttp.send('{"review_text":"'+text+'"}');
+        console.log('{"review_text":"'+text+'"}');
+        xhttp.send('{"review_text":"What I did was wrong. I feel shame."}');
     }
 
-   
 </script>
